@@ -17,6 +17,14 @@
 		1815530B27897543000690A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181552E127897541000690A5 /* ContentView.swift */; };
 		1815530C27897543000690A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181552E227897543000690A5 /* Assets.xcassets */; };
 		1815530D27897543000690A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181552E227897543000690A5 /* Assets.xcassets */; };
+		1815531E2789E06F000690A5 /* GeneralComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815531D2789E06F000690A5 /* GeneralComponents.swift */; };
+		181553212789E0F5000690A5 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181553202789E0F5000690A5 /* Home.swift */; };
+		181553232789E250000690A5 /* Contribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181553222789E250000690A5 /* Contribute.swift */; };
+		181553252789E37E000690A5 /* HomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181553242789E37E000690A5 /* HomeContent.swift */; };
+		181553272789F6A0000690A5 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181553262789F6A0000690A5 /* Profile.swift */; };
+		187F46CA2799B6F600269D53 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F46C92799B6F600269D53 /* TabBar.swift */; };
+		187F46CC2799B93200269D53 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F46CB2799B93200269D53 /* TabButton.swift */; };
+		187F46CE2799BFDB00269D53 /* TopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F46CD2799BFDB00269D53 /* TopMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		1815530027897543000690A5 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1815530427897543000690A5 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		1815530627897543000690A5 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		1815531D2789E06F000690A5 /* GeneralComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralComponents.swift; sourceTree = "<group>"; };
+		181553202789E0F5000690A5 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		181553222789E250000690A5 /* Contribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribute.swift; sourceTree = "<group>"; };
+		181553242789E37E000690A5 /* HomeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContent.swift; sourceTree = "<group>"; };
+		181553262789F6A0000690A5 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		187F46C92799B6F600269D53 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		187F46CB2799B93200269D53 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		187F46CD2799BFDB00269D53 /* TopMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +113,9 @@
 		181552DF27897541000690A5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				187F46C82799A86600269D53 /* View */,
+				1815531F2789E0EB000690A5 /* Tabs */,
+				1815531C2789E044000690A5 /* Components */,
 				181552E027897541000690A5 /* laneCheckApp.swift */,
 				181552E127897541000690A5 /* ContentView.swift */,
 				181552E227897543000690A5 /* Assets.xcassets */,
@@ -139,6 +158,35 @@
 				1815530627897543000690A5 /* Tests_macOSLaunchTests.swift */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		1815531C2789E044000690A5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1815531D2789E06F000690A5 /* GeneralComponents.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1815531F2789E0EB000690A5 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				181553222789E250000690A5 /* Contribute.swift */,
+				181553242789E37E000690A5 /* HomeContent.swift */,
+				181553262789F6A0000690A5 /* Profile.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		187F46C82799A86600269D53 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				181553202789E0F5000690A5 /* Home.swift */,
+				187F46C92799B6F600269D53 /* TabBar.swift */,
+				187F46CB2799B93200269D53 /* TabButton.swift */,
+				187F46CD2799BFDB00269D53 /* TopMenu.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +347,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187F46CE2799BFDB00269D53 /* TopMenu.swift in Sources */,
+				187F46CC2799B93200269D53 /* TabButton.swift in Sources */,
+				1815531E2789E06F000690A5 /* GeneralComponents.swift in Sources */,
 				1815530A27897543000690A5 /* ContentView.swift in Sources */,
+				181553252789E37E000690A5 /* HomeContent.swift in Sources */,
+				187F46CA2799B6F600269D53 /* TabBar.swift in Sources */,
+				181553272789F6A0000690A5 /* Profile.swift in Sources */,
+				181553212789E0F5000690A5 /* Home.swift in Sources */,
 				1815530827897543000690A5 /* laneCheckApp.swift in Sources */,
+				181553232789E250000690A5 /* Contribute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

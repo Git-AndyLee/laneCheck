@@ -12,7 +12,6 @@ struct laneCheckApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-            Text("TEsting")
         }
     }
 }
