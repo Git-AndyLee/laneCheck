@@ -8,23 +8,28 @@
 import SwiftUI
 
 struct TopMenus: View {
-    var menu : Int
+    var menuID : Int
     @Binding var index : Int
+    var menu = [String]()
+    
+    //Below is another e.g.
+    //var arr:[Int] = []
+
     
     var body: some View {
         Button(action: {
-            self.index = menu
+            self.index = menuID
         }) {
             VStack(spacing: 8){
-                Text(topMenu[menu])
+                Text(menu[menuID])
                     .font(.system(size: 22))
-                    .fontWeight(index == menu ? .bold : .none)
-                    .foregroundColor(index == menu ? .black : .gray)
+                    .fontWeight(index == menuID ? .bold : .none)
+                    .foregroundColor(index == menuID ? .black : .gray)
                 
                 Circle()
                     .fill(Color.black)
                     .frame(width: 10, height: 10)
-                    .opacity(index == menu ? 1 : 0)
+                    .opacity(index == menuID ? 1 : 0)
             }
         }
     }

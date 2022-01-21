@@ -18,7 +18,7 @@ struct TabBar: View {
                 Home()
                     .tag("Home")
                 
-                Text("Contribute")
+                Contribute()
                     .tag("Contribute")
                 
                 Text("Profile")
