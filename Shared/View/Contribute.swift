@@ -14,6 +14,12 @@ var contributeMenu = ["Submitted", "Contributions", "Points"]
 struct Contribute: View {
     
     @State var selectedTab = 0
+    @State var lanes : [Lane] = [
+        Lane(laneNumber: 1, laneItem1: "Milk", laneItem2: "Sandwich", laneItem3: "Kitchen"),
+        Lane(laneNumber: 2, laneItem1: "Milkey", laneItem2: "MacBook", laneItem3: "Apple")
+    ]
+    
+    @State var currentIndex : Int = 0
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -56,7 +62,27 @@ struct Contribute: View {
                     }
                 }
                 .padding(.top, 20)
-        
+                
+                ContributeCarousel(lanes: $lanes, currentIndex: $currentIndex)
+                
+                Button(action: {
+                    lanes.append(Lane(laneNumber: 3, laneItem1: "Protein", laneItem2: "Pork", laneItem3: "Chicken"))
+                    
+                }) {
+                    Text("Add Lanes")
+                        .font(.caption)
+                        .foregroundColor(.black)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 20)
+                        .background(
+                            Capsule()
+                                .stroke(.black, lineWidth: 1)
+                        )
+                        
+
+                }
+                
+            
             }
             .padding()
         }
@@ -71,3 +97,12 @@ struct Contribute: View {
         )
     }
 }
+
+//struct Contribute_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Contribute()
+//    }
+//}
+
+
+
