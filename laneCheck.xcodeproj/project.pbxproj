@@ -28,6 +28,7 @@
 		183332BD279AD3FE0083EAA4 /* CustomCardShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183332BC279AD3FE0083EAA4 /* CustomCardShape.swift */; };
 		1834AE00279BBDCF00BA3C8F /* ContributeCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1834ADFF279BBDCF00BA3C8F /* ContributeCarousel.swift */; };
 		1834AE04279BC7B500BA3C8F /* Lane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1834AE03279BC7B500BA3C8F /* Lane.swift */; };
+		1867629E27A82B1B00A6641D /* ContriViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867629D27A82B1B00A6641D /* ContriViewModel.swift */; };
 		187F46CA2799B6F600269D53 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F46C92799B6F600269D53 /* TabBar.swift */; };
 		187F46CC2799B93200269D53 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F46CB2799B93200269D53 /* TabButton.swift */; };
 		187F46CE2799BFDB00269D53 /* TopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F46CD2799BFDB00269D53 /* TopMenu.swift */; };
@@ -74,6 +75,7 @@
 		183332BC279AD3FE0083EAA4 /* CustomCardShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardShape.swift; sourceTree = "<group>"; };
 		1834ADFF279BBDCF00BA3C8F /* ContributeCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeCarousel.swift; sourceTree = "<group>"; };
 		1834AE03279BC7B500BA3C8F /* Lane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lane.swift; sourceTree = "<group>"; };
+		1867629D27A82B1B00A6641D /* ContriViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContriViewModel.swift; sourceTree = "<group>"; };
 		187F46C92799B6F600269D53 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		187F46CB2799B93200269D53 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		187F46CD2799BFDB00269D53 /* TopMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenu.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		181552DF27897541000690A5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				1867629C27A82A6900A6641D /* ViewModel */,
 				183332B9279AC0E10083EAA4 /* Model */,
 				187F46C82799A86600269D53 /* View */,
 				1815531F2789E0EB000690A5 /* Tabs */,
@@ -197,6 +200,14 @@
 				1834AE03279BC7B500BA3C8F /* Lane.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1867629C27A82A6900A6641D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1867629D27A82B1B00A6641D /* ContriViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		187F46C82799A86600269D53 /* View */ = {
@@ -380,6 +391,7 @@
 				1815530A27897543000690A5 /* ContentView.swift in Sources */,
 				1834AE04279BC7B500BA3C8F /* Lane.swift in Sources */,
 				181553252789E37E000690A5 /* HomeContent.swift in Sources */,
+				1867629E27A82B1B00A6641D /* ContriViewModel.swift in Sources */,
 				183332B6279ABB800083EAA4 /* OutletMenu.swift in Sources */,
 				187F46CA2799B6F600269D53 /* TabBar.swift in Sources */,
 				183332BB279AC0ED0083EAA4 /* Tab.swift in Sources */,

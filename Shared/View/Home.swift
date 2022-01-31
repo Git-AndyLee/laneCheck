@@ -9,10 +9,22 @@ import SwiftUI
 
 var topMenu = ["Fairprices", "Giant", "Sheng Shiong", "Cold Storage"]
 
+//struct Homev1 : View {
+//    var body : some View {
+//        VStack{
+//            Home().environmentObject(ContriViewModel())
+//        }
+//    }
+//}
+
+
 struct Home: View {
     
     @State var topIndex = 0
     @State var selectedOutlet = "Ang Mo Kio Boys"
+    
+    //@StateObject var laneModel = ContriViewModel()
+    @EnvironmentObject var data : ContriViewModel
     
     @State var tabs: [Tab] = [
         Tab(title: "1", laneItem1: "Senior Care", laneItem2: "Diapers", laneItem3: "Wine"),
@@ -24,6 +36,8 @@ struct Home: View {
     ]
     
     @State var currentIndex : Int = 0
+    @State var newLane = false
+
 
     var body: some View {
         VStack{
@@ -33,6 +47,7 @@ struct Home: View {
                 .kerning(1.1)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading)
+                .padding(.top, 20)
             
             ScrollView(.horizontal, showsIndicators: false){
                 
@@ -52,7 +67,8 @@ struct Home: View {
                 
                 OutletMenu(selectedOutlet: $selectedOutlet)
                 
-                InfiniteCarouselView(tabs: $tabs, currentIndex: $currentIndex)
+                //InfiniteCarouselView(tabs: $tabs, currentIndex: $currentIndex)
+                InfiniteCarouselView(tabs: $data.tabz, currentIndex: $currentIndex)
             
                 HStack(spacing: 5) {
                     ForEach(tabs.indices, id: \.self) {index in

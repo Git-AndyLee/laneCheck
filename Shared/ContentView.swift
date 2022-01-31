@@ -13,7 +13,7 @@ struct ContentView: View {
         UITabBar.appearance().isHidden = true
     }
     var body: some View {
-        TabBar()
+        TabBarv1()
     }
 }
 

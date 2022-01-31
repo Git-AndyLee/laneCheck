@@ -13,7 +13,7 @@ struct InfiniteCarouselView: View {
     @Binding var tabs: [Tab]
     @Binding var currentIndex: Int
     
-    @State var fakeIndex = 0
+    @State var fakeIndex = 2
     @State var offset : CGFloat = 0
     @State var genericTabs: [Tab] = []
     

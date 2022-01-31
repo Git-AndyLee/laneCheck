@@ -13,6 +13,10 @@ var contributeMenu = ["Submitted", "Contributions", "Points"]
 
 struct Contribute: View {
     
+    //@StateObject var laneModel = ContriViewModel()
+    
+    @EnvironmentObject var datas : ContriViewModel
+    
     @State var selectedTab = 0
     @State var lanes : [Lane] = [
         Lane(laneNumber: 1, laneItem1: "Milk", laneItem2: "Sandwich", laneItem3: "Kitchen"),
@@ -20,14 +24,14 @@ struct Contribute: View {
     ]
     
     @State var currentIndex : Int = 0
+    @State var newLane = false
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 15) {
-                Text("Hello, Andy!")
-                    .font(.title3)
-                    .kerning(1.1)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+//                Text("Hello, Andy!")
+//                    .font(.title3)
+//                    .kerning(1.1)
+//                    .frame(maxWidth: .infinity, alignment: .leading)
                 
                 HStack(alignment: .bottom) {
                     Text("Your contribution goes a long way in helping the community.")
@@ -61,12 +65,18 @@ struct Contribute: View {
 
                     }
                 }
-                .padding(.top, 20)
+                .padding(.top, 10)
                 
-                ContributeCarousel(lanes: $lanes, currentIndex: $currentIndex)
+                //ContributeCarousel(lanes: $lanes, currentIndex: $currentIndex, newLane: $newLane)
+                ContributeCarousel()
+                
                 
                 Button(action: {
                     lanes.append(Lane(laneNumber: 3, laneItem1: "Protein", laneItem2: "Pork", laneItem3: "Chicken"))
+                    
+                    self.datas.lanes.append(Lane(laneNumber: 69, laneItem1: "testing", laneItem2: "tested", laneItem3: "Testies"))
+                    
+                    self.newLane = true
                     
                 }) {
                     Text("Add Lanes")
@@ -82,19 +92,18 @@ struct Contribute: View {
 
                 }
                 
-            
+                Spacer(minLength: 0)
             }
             .padding()
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            //Linear BG...
-            LinearGradient(colors: [
-                Color("BG1"),
-                Color("BG2")
-            ], startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
-        )
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(
+                //Linear BG...
+                LinearGradient(colors: [
+                    Color("BG1"),
+                    Color("BG2")
+                ], startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
+            )
     }
 }
 

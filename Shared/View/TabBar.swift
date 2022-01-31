@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+
+struct TabBarv1 : View {
+    var body : some View {
+        VStack{
+            TabBar().environmentObject(ContriViewModel())
+        }
+    }
+}
+
 struct TabBar: View {
     @State var current = "Home"
     

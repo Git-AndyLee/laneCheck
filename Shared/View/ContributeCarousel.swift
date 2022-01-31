@@ -9,8 +9,17 @@ import SwiftUI
 
 struct ContributeCarousel: View {
     
-    @Binding var lanes: [Lane]
-    @Binding var currentIndex : Int
+    //@EnvironmentObject var laneModel : ContriViewModel
+    
+    
+    @StateObject var laneModel = ContriViewModel()
+    
+    @EnvironmentObject var datas : ContriViewModel
+
+    
+    //@Binding var lanes: [Lane]
+    //@Binding var currentIndex : Int
+    //@Binding var newLane : Bool
     @State var fakeIndex : Int = 0
     
     @State var offset : CGFloat = 0
@@ -18,8 +27,9 @@ struct ContributeCarousel: View {
     @State var genericLanes: [Lane] = []
     
     var body: some View {
+        
         TabView(selection: $fakeIndex) {
-            ForEach(genericLanes) {lane in
+            ForEach(datas.lanes) {lane in
                 VStack(spacing: 18){
                     
                     Spacer()
@@ -32,6 +42,12 @@ struct ContributeCarousel: View {
                         .font(.largeTitle.bold())
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
+                    
+                    Text(datas.hello)
+                        .font(.largeTitle.bold())
+                        .foregroundColor(.black)
+                        .multilineTextAlignment(.center)
+                    
                 
                     Spacer()
                 }
@@ -39,77 +55,67 @@ struct ContributeCarousel: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.white)
                 .cornerRadius(30)
-                .overlay(
-                    GeometryReader{proxy in
-                                   Color.clear
-                                    .preference(key: OffsetKey.self, value: proxy.frame(in: .global).minX)
-                                   
-                    }
-                )
-                .onPreferenceChange(OffsetKey.self, perform: { offset in
-                    self.offset = offset
-                })
-                .tag(getIndex(lane: lane))
+//                .tag(getIndex(lane: lane))
                 
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
         .frame(height: 420)
         .padding(.top, 10)
-        .onChange(of: offset) { newValue in
-            
-            if fakeIndex == 0 && offset == 0 {
-                fakeIndex = genericLanes.count - 2
-            }
-            
-            if fakeIndex == genericLanes.count - 1 && offset == 0 {
-                fakeIndex = 1
-            }
-        }
-        .onAppear {
-            
-            genericLanes = lanes
-            
-            guard var first = genericLanes.first else {
-                return
-            }
-            
-            guard var last = genericLanes.last else {
-                return
-            }
-            
-            
-            first.id = UUID().uuidString
-            last.id = UUID().uuidString
-            
-            genericLanes.append(first)
-            genericLanes.insert(last, at: 0)
-            
-            fakeIndex = 1
-        }
-        .onChange(of: lanes) { newValue in
-            
-            genericLanes = lanes
-            
-            guard var first = genericLanes.first else {
-                return
-            }
-            
-            guard var last = genericLanes.last else {
-                return
-            }
-            
-            
-            first.id = UUID().uuidString
-            last.id = UUID().uuidString
-            
-            genericLanes.append(first)
-            genericLanes.insert(last, at: 0)
-        
-        }
-        .onChange(of: fakeIndex) { newValue in
-            currentIndex = fakeIndex - 1
-        }
+//        .onChange(of: offset) { newValue in
+//
+//            if fakeIndex == 0 && offset == 0 {
+//                fakeIndex = genericLanes.count - 2
+//            }
+//
+//            if fakeIndex == genericLanes.count - 1 && offset == 0 {
+//                fakeIndex = 1
+//            }
+//        }
+//        .onAppear {
+//
+//            genericLanes = lanes
+//
+//            guard var first = genericLanes.first else {
+//                return
+//            }
+//
+//            guard var last = genericLanes.last else {
+//                return
+//            }
+//
+//
+//            first.id = UUID().uuidString
+//            last.id = UUID().uuidString
+//
+//            genericLanes.append(first)
+//            genericLanes.insert(last, at: 0)
+//
+//            fakeIndex = 1
+//        }
+//        .onChange(of: lanes) { newValue in
+//
+//            genericLanes = lanes
+//
+//            guard var first = genericLanes.first else {
+//                return
+//            }
+//
+//            guard var last = genericLanes.last else {
+//                return
+//            }
+//
+//
+//            first.id = UUID().uuidString
+//            last.id = UUID().uuidString
+//
+//            genericLanes.append(first)
+//            genericLanes.insert(last, at: 0)
+//
+//        }
+//        .onChange(of: fakeIndex) { newValue in
+//            currentIndex = fakeIndex - 1
+//        }
     }
     
     func getIndex(lane: Lane) -> Int {
