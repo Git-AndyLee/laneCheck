@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Lane: Identifiable, Hashable {
-    
     var id = UUID().uuidString
     var laneNumber: Int
     var laneItem1 : String

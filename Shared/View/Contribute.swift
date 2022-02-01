@@ -13,15 +13,11 @@ var contributeMenu = ["Submitted", "Contributions", "Points"]
 
 struct Contribute: View {
     
-    //@StateObject var laneModel = ContriViewModel()
+    @StateObject var laneModel = ContriViewModel()
     
     @EnvironmentObject var datas : ContriViewModel
     
     @State var selectedTab = 0
-    @State var lanes : [Lane] = [
-        Lane(laneNumber: 1, laneItem1: "Milk", laneItem2: "Sandwich", laneItem3: "Kitchen"),
-        Lane(laneNumber: 2, laneItem1: "Milkey", laneItem2: "MacBook", laneItem3: "Apple")
-    ]
     
     @State var currentIndex : Int = 0
     @State var newLane = false
@@ -40,6 +36,10 @@ struct Contribute: View {
                     
                     
                     Button(action: {
+                        
+                        withAnimation{
+                            laneModel.addNewLane.toggle()
+                        }
                         
                     }) {
                         Text("Add Lanes")
@@ -68,29 +68,42 @@ struct Contribute: View {
                 .padding(.top, 10)
                 
                 //ContributeCarousel(lanes: $lanes, currentIndex: $currentIndex, newLane: $newLane)
-                ContributeCarousel()
+                //ContributeCarousel()
                 
-                
-                Button(action: {
-                    lanes.append(Lane(laneNumber: 3, laneItem1: "Protein", laneItem2: "Pork", laneItem3: "Chicken"))
-                    
-                    self.datas.lanes.append(Lane(laneNumber: 69, laneItem1: "testing", laneItem2: "tested", laneItem3: "Testies"))
-                    
-                    self.newLane = true
-                    
-                }) {
-                    Text("Add Lanes")
-                        .font(.caption)
-                        .foregroundColor(.black)
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 20)
-                        .background(
-                            Capsule()
-                                .stroke(.black, lineWidth: 1)
-                        )
-                        
-
+                if self.selectedTab == 0 {
+                    VStack(spacing: 15){
+                        ScrollView(.vertical, showsIndicators: false){
+                            ForEach($laneModel.lanes) { lane in
+                                contributeCardView(lane: lane)
+                            }
+                        }
+                    }
+                    .padding(.top, 20)
+                } else if self.selectedTab == 1 {
+                    Text("second page")
+                } else {
+                    Text("Third page")
                 }
+                
+                
+                
+                
+//                Button(action: {
+//                    self.datas.lanes.append(Lane(laneNumber: 69, laneItem1: "testing", laneItem2: "tested", laneItem3: "Testies"))
+//
+//                    self.newLane = true
+//
+//                }) {
+//                    Text("Add Lanes")
+//                        .font(.caption)
+//                        .foregroundColor(.black)
+//                        .padding(.vertical, 10)
+//                        .padding(.horizontal, 20)
+//                        .background(
+//                            Capsule()
+//                                .stroke(.black, lineWidth: 1)
+//                        )
+//                }
                 
                 Spacer(minLength: 0)
             }
@@ -104,6 +117,7 @@ struct Contribute: View {
                 ], startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
             )
+            ///.overlay(AddLane().environmentObject(ContriViewModel))
     }
 }
 

@@ -10,12 +10,12 @@ import SwiftUI
 struct InfiniteCarouselView: View {
     //Tabs...
     
-    @Binding var tabs: [Tab]
+    @Binding var tabs: [Lane]
     @Binding var currentIndex: Int
     
     @State var fakeIndex = 2
     @State var offset : CGFloat = 0
-    @State var genericTabs: [Tab] = []
+    @State var genericTabs: [Lane] = []
     
     var body: some View {
         
@@ -30,7 +30,7 @@ struct InfiniteCarouselView: View {
                         .font(.title3.bold())
                         .foregroundColor(.gray)
                     
-                    Text(tab.title)
+                    Text("\(tab.laneNumber)")
                         .font(.system(size: 60, weight: .bold))
                         //.font(.largeTitle.bold())
                         .foregroundColor(.white)
@@ -155,7 +155,7 @@ struct InfiniteCarouselView: View {
     }
     
     
-    func getIndex(tab: Tab) -> Int {
+    func getIndex(tab: Lane) -> Int {
         let index = genericTabs.firstIndex { currentTab in
             return currentTab.id == tab.id
         } ?? 0

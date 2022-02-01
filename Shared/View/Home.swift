@@ -9,31 +9,13 @@ import SwiftUI
 
 var topMenu = ["Fairprices", "Giant", "Sheng Shiong", "Cold Storage"]
 
-//struct Homev1 : View {
-//    var body : some View {
-//        VStack{
-//            Home().environmentObject(ContriViewModel())
-//        }
-//    }
-//}
-
-
 struct Home: View {
     
     @State var topIndex = 0
     @State var selectedOutlet = "Ang Mo Kio Boys"
     
     //@StateObject var laneModel = ContriViewModel()
-    @EnvironmentObject var data : ContriViewModel
-    
-    @State var tabs: [Tab] = [
-        Tab(title: "1", laneItem1: "Senior Care", laneItem2: "Diapers", laneItem3: "Wine"),
-        Tab(title: "2", laneItem1: "Chocolate", laneItem2: "Candies", laneItem3: "Toys"),
-        Tab(title: "3", laneItem1: "Bicycles", laneItem2: "Electronics", laneItem3: "Bags"),
-        Tab(title: "4", laneItem1: "Shower Essentials", laneItem2: "Movies", laneItem3: "Vegetables"),
-        Tab(title: "5", laneItem1: "Meat", laneItem2: "Dairy", laneItem3: "Water"),
-        Tab(title: "6", laneItem1: "Organic", laneItem2: "International", laneItem3: "Party Goods")
-    ]
+    @EnvironmentObject var data : HomeViewModel
     
     @State var currentIndex : Int = 0
     @State var newLane = false
@@ -68,10 +50,10 @@ struct Home: View {
                 OutletMenu(selectedOutlet: $selectedOutlet)
                 
                 //InfiniteCarouselView(tabs: $tabs, currentIndex: $currentIndex)
-                InfiniteCarouselView(tabs: $data.tabz, currentIndex: $currentIndex)
+                InfiniteCarouselView(tabs: $data.homeLanes, currentIndex: $currentIndex)
             
                 HStack(spacing: 5) {
-                    ForEach(tabs.indices, id: \.self) {index in
+                    ForEach(data.homeLanes.indices, id: \.self) {index in
                         Capsule()
                             .fill(Color.black.opacity(currentIndex == index ? 1 : 0.55))
                             .frame(width: currentIndex == index ? 18 : 4, height: 4)

@@ -24,7 +24,6 @@
 		181553272789F6A0000690A5 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181553262789F6A0000690A5 /* Profile.swift */; };
 		183332B6279ABB800083EAA4 /* OutletMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183332B5279ABB800083EAA4 /* OutletMenu.swift */; };
 		183332B8279AC0A10083EAA4 /* InfiniteCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183332B7279AC0A10083EAA4 /* InfiniteCarouselView.swift */; };
-		183332BB279AC0ED0083EAA4 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183332BA279AC0ED0083EAA4 /* Tab.swift */; };
 		183332BD279AD3FE0083EAA4 /* CustomCardShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183332BC279AD3FE0083EAA4 /* CustomCardShape.swift */; };
 		1834AE00279BBDCF00BA3C8F /* ContributeCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1834ADFF279BBDCF00BA3C8F /* ContributeCarousel.swift */; };
 		1834AE04279BC7B500BA3C8F /* Lane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1834AE03279BC7B500BA3C8F /* Lane.swift */; };
@@ -32,6 +31,9 @@
 		187F46CA2799B6F600269D53 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F46C92799B6F600269D53 /* TabBar.swift */; };
 		187F46CC2799B93200269D53 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F46CB2799B93200269D53 /* TabButton.swift */; };
 		187F46CE2799BFDB00269D53 /* TopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F46CD2799BFDB00269D53 /* TopMenu.swift */; };
+		1893DE2827A95F7900B9B3BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893DE2727A95F7900B9B3BF /* HomeViewModel.swift */; };
+		1893DE2A27A9727E00B9B3BF /* contributeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893DE2927A9727E00B9B3BF /* contributeCardView.swift */; };
+		1893DE2C27A98AD500B9B3BF /* AddLane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893DE2B27A98AD500B9B3BF /* AddLane.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +73,6 @@
 		181553262789F6A0000690A5 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		183332B5279ABB800083EAA4 /* OutletMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletMenu.swift; sourceTree = "<group>"; };
 		183332B7279AC0A10083EAA4 /* InfiniteCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteCarouselView.swift; sourceTree = "<group>"; };
-		183332BA279AC0ED0083EAA4 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		183332BC279AD3FE0083EAA4 /* CustomCardShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardShape.swift; sourceTree = "<group>"; };
 		1834ADFF279BBDCF00BA3C8F /* ContributeCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeCarousel.swift; sourceTree = "<group>"; };
 		1834AE03279BC7B500BA3C8F /* Lane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lane.swift; sourceTree = "<group>"; };
@@ -79,6 +80,9 @@
 		187F46C92799B6F600269D53 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		187F46CB2799B93200269D53 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		187F46CD2799BFDB00269D53 /* TopMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenu.swift; sourceTree = "<group>"; };
+		1893DE2727A95F7900B9B3BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		1893DE2927A9727E00B9B3BF /* contributeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contributeCardView.swift; sourceTree = "<group>"; };
+		1893DE2B27A98AD500B9B3BF /* AddLane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLane.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,7 +200,6 @@
 		183332B9279AC0E10083EAA4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				183332BA279AC0ED0083EAA4 /* Tab.swift */,
 				1834AE03279BC7B500BA3C8F /* Lane.swift */,
 			);
 			path = Model;
@@ -206,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				1867629D27A82B1B00A6641D /* ContriViewModel.swift */,
+				1893DE2727A95F7900B9B3BF /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -222,6 +226,8 @@
 				183332B7279AC0A10083EAA4 /* InfiniteCarouselView.swift */,
 				183332BC279AD3FE0083EAA4 /* CustomCardShape.swift */,
 				1834ADFF279BBDCF00BA3C8F /* ContributeCarousel.swift */,
+				1893DE2927A9727E00B9B3BF /* contributeCardView.swift */,
+				1893DE2B27A98AD500B9B3BF /* AddLane.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -385,20 +391,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				187F46CE2799BFDB00269D53 /* TopMenu.swift in Sources */,
+				1893DE2827A95F7900B9B3BF /* HomeViewModel.swift in Sources */,
 				187F46CC2799B93200269D53 /* TabButton.swift in Sources */,
 				183332BD279AD3FE0083EAA4 /* CustomCardShape.swift in Sources */,
 				1815531E2789E06F000690A5 /* GeneralComponents.swift in Sources */,
 				1815530A27897543000690A5 /* ContentView.swift in Sources */,
 				1834AE04279BC7B500BA3C8F /* Lane.swift in Sources */,
+				1893DE2C27A98AD500B9B3BF /* AddLane.swift in Sources */,
 				181553252789E37E000690A5 /* HomeContent.swift in Sources */,
 				1867629E27A82B1B00A6641D /* ContriViewModel.swift in Sources */,
 				183332B6279ABB800083EAA4 /* OutletMenu.swift in Sources */,
 				187F46CA2799B6F600269D53 /* TabBar.swift in Sources */,
-				183332BB279AC0ED0083EAA4 /* Tab.swift in Sources */,
 				181553272789F6A0000690A5 /* Profile.swift in Sources */,
 				183332B8279AC0A10083EAA4 /* InfiniteCarouselView.swift in Sources */,
 				181553212789E0F5000690A5 /* Home.swift in Sources */,
 				1834AE00279BBDCF00BA3C8F /* ContributeCarousel.swift in Sources */,
+				1893DE2A27A9727E00B9B3BF /* contributeCardView.swift in Sources */,
 				1815530827897543000690A5 /* laneCheckApp.swift in Sources */,
 				181553232789E250000690A5 /* Contribute.swift in Sources */,
 			);

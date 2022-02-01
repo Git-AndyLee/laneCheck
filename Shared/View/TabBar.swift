@@ -11,7 +11,9 @@ import SwiftUI
 struct TabBarv1 : View {
     var body : some View {
         VStack{
-            TabBar().environmentObject(ContriViewModel())
+            TabBar()
+                .environmentObject(ContriViewModel())
+                .environmentObject(HomeViewModel())
         }
     }
 }
